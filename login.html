@@ -5,6 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login - Recording Hub</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="shortcut icon" href="/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
 </head>
 <body>
     <header>
@@ -12,18 +17,24 @@
         <p>Please enter your display name and Discord username before submitting a payment.</p>
     </header>
     <main>
-        <section>
+        <section class="login-card">
+            <div class="card-header">
+                <h1>Sign in to Recording Hub</h1>
+                <p>Tell us who you are so payment submissions include your name and Discord handle.</p>
+            </div>
             <form id="login-form">
-                <label for="name">Your Name</label>
-                <input type="text" id="name" name="name" placeholder="e.g. Rishi" required>
-
-                <label for="discord">Discord Username</label>
-                <input type="text" id="discord" name="discord" placeholder="e.g. Rishi#1234" required>
-
-                <button type="submit">Save and Continue</button>
+                <div class="form-group">
+                    <label for="name">Your Name</label>
+                    <input type="text" id="name" name="name" placeholder="e.g. Rishi" required>
+                </div>
+                <div class="form-group">
+                    <label for="discord">Discord Username</label>
+                    <input type="text" id="discord" name="discord" placeholder="e.g. Rishi#1234" required>
+                </div>
+                <button type="submit" class="primary-button">Save and Continue</button>
             </form>
-            <div id="login-status"></div>
-            <button id="logout-button" style="display:none;">Logout</button>
+            <div id="login-status" class="login-status"></div>
+            <button id="logout-button" class="secondary-button" style="display:none;">Logout</button>
         </section>
     </main>
     <footer>

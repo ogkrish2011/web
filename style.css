@@ -34,9 +34,34 @@ body {
 header {
     background: linear-gradient(135deg, #1e3a8a, #0d7f7f);
     padding: 1.5rem;
+    position: relative;
     text-align: center;
     border-bottom: 2px solid #00ffff;
     animation: slideDown 0.6s ease-out;
+}
+
+.top-bar {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+}
+
+.login-button {
+    display: inline-block;
+    padding: 0.65rem 1rem;
+    background: #00ffff;
+    color: #0b1720;
+    border-radius: 999px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    text-decoration: none;
+    font-weight: 700;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+}
+
+.login-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(0, 255, 255, 0.3);
+    background: #8effff;
 }
 
 header h1 {
@@ -57,6 +82,101 @@ main {
     max-width: 1200px;
     margin: 2rem auto;
     padding: 0 1rem;
+}
+
+.login-card {
+    max-width: 520px;
+    margin: 2rem auto;
+    padding: 2rem;
+    border-radius: 20px;
+    background: rgba(15, 20, 25, 0.95);
+    border: 1px solid rgba(0, 255, 255, 0.15);
+    box-shadow: 0 24px 60px rgba(0, 0, 0, 0.35);
+    animation: fadeInUp 0.8s ease-out;
+}
+
+.card-header h1 {
+    margin-bottom: 0.5rem;
+    font-size: 2rem;
+    color: #00ffff;
+    text-shadow: 0 0 8px rgba(0, 255, 255, 0.4);
+}
+
+.card-header p {
+    color: #c8f5f5;
+    margin-bottom: 1.5rem;
+    line-height: 1.5;
+}
+
+.form-group {
+    margin-bottom: 1.2rem;
+}
+
+.login-card label {
+    display: block;
+    margin-bottom: 0.6rem;
+    color: #a5f7ff;
+    font-weight: 600;
+}
+
+.login-card input {
+    width: 100%;
+    padding: 0.95rem 1rem;
+    background: #111827;
+    border: 1px solid rgba(0, 255, 255, 0.25);
+    border-radius: 12px;
+    color: #e5f8ff;
+    font-size: 1rem;
+}
+
+.login-card input:focus {
+    outline: none;
+    border-color: #00ffff;
+    box-shadow: 0 0 0 4px rgba(0, 255, 255, 0.12);
+}
+
+.primary-button,
+.secondary-button {
+    width: 100%;
+    padding: 0.95rem 1rem;
+    border-radius: 999px;
+    border: none;
+    cursor: pointer;
+    font-weight: 700;
+    transition: transform 0.2s ease, background 0.2s ease, box-shadow 0.2s ease;
+}
+
+.primary-button {
+    background: #00ffff;
+    color: #0b1720;
+    margin-top: 0.5rem;
+}
+
+.primary-button:hover {
+    background: #8effff;
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(0, 255, 255, 0.25);
+}
+
+.secondary-button {
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    color: #c8f5f5;
+    margin-top: 0.75rem;
+}
+
+.secondary-button:hover {
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.login-status {
+    margin-top: 1.2rem;
+    color: #b8fff7;
+    text-align: center;
+}
+
+.login-card .primary-button {
+    margin-bottom: 0.75rem;
 }
 
 section {

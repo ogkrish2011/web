@@ -5,11 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Recording Hub - Minecraft YouTuber Recordings</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="shortcut icon" href="/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
 </head>
 <body>
     <header>
         <div class="top-bar">
-            <a class="login-button" href="/login">Login</a>
+            <a id="login-link" class="login-button" href="/login">Login</a>
         </div>
         <h1>Recording Hub</h1>
         <p>Your ultimate Discord server for Minecraft YouTubers to connect with players for high-quality recordings. Get dedicated members, voice artists, and more for your content!</p>
@@ -87,5 +92,18 @@
         <p>Join our Discord server to get started: <a href="https://discord.gg/vxR2BWzhHj" target="_blank">Recording Hub Discord</a></p>
         <p>&copy; 2026 Recording Hub. All rights reserved.</p>
     </footer>
+    <script>
+        const loginLink = document.getElementById('login-link');
+        const storedName = localStorage.getItem('recordingHubName');
+        if (storedName) {
+            loginLink.textContent = storedName;
+            loginLink.href = '/login?next=/';
+            loginLink.title = 'Change login info';
+        } else {
+            loginLink.textContent = 'Login';
+            loginLink.href = '/login';
+            loginLink.title = 'Login to identify your payments';
+        }
+    </script>
 </body>
 </html>
