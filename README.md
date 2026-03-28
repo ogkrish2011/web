@@ -7,6 +7,7 @@ A full-stack website for the Recording Hub Discord server, featuring UPI payment
 - Pricing plans for Minecraft YouTubers
 - UPI payment integration (manual submission)
 - Discord notifications on payment submission
+- Login page captures buyer name and Discord username
 - Responsive design with aqua theme
 
 ## Setup

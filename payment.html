@@ -17,6 +17,7 @@
             <div id="details">
                 <p>Loading...</p>
             </div>
+            <div id="login-info" class="login-info"></div>
         </section>
         <section id="payment-info">
             <h2>Payment Information</h2>
@@ -42,6 +43,18 @@
         const members = urlParams.get('members');
         const price = urlParams.get('price');
         const creators = urlParams.get('creators');
+        const purchaserName = localStorage.getItem('recordingHubName');
+        const purchaserDiscord = localStorage.getItem('recordingHubDiscord');
+
+        if (!purchaserName || !purchaserDiscord) {
+            const nextPage = encodeURIComponent(window.location.pathname + window.location.search);
+            window.location.href = `/login?next=${nextPage}`;
+        }
+
+        const loginInfo = document.getElementById('login-info');
+        if (loginInfo) {
+            loginInfo.innerHTML = `<p>Logged in as <strong>${purchaserName}</strong> (${purchaserDiscord}).</p>`;
+        }
 
         // Display product details
         const detailsDiv = document.getElementById('details');
@@ -67,7 +80,7 @@
             const response = await fetch('/submit-payment', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ plan, members, price, transactionId }),
+                body: JSON.stringify({ plan, members, price, transactionId, purchaserName, purchaserDiscord }),
             });
 
             const result = await response.json();

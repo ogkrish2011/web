@@ -13,11 +13,13 @@ app.use(express.static('.')); // Serve static files
 
 // Submit payment (manual verification)
 app.post('/submit-payment', async (req, res) => {
-  const { plan, members, price, transactionId } = req.body;
+  const { plan, members, price, transactionId, purchaserName, purchaserDiscord } = req.body;
+  const owner = purchaserName || 'Unknown';
+  const discordUser = purchaserDiscord || 'Unknown';
 
   // Send Discord notification
   const message = {
-    content: `💰 Payment Submitted!\n**Plan:** ${plan}\n**Members:** ${members}\n**Amount:** ₹${price}\n**Transaction ID:** ${transactionId}\nPlease verify the payment manually.`,
+    content: `💰 Payment Submitted!\n**Customer:** ${owner} (${discordUser})\n**Plan:** ${plan}\n**Members:** ${members}\n**Amount:** ₹${price}\n**Transaction ID:** ${transactionId}\nPlease verify the payment manually.`,
   };
 
   try {

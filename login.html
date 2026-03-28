@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Recording Hub</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Login to Recording Hub</h1>
+        <p>Please enter your display name and Discord username before submitting a payment.</p>
+    </header>
+    <main>
+        <section>
+            <form id="login-form">
+                <label for="name">Your Name</label>
+                <input type="text" id="name" name="name" placeholder="e.g. Rishi" required>
+
+                <label for="discord">Discord Username</label>
+                <input type="text" id="discord" name="discord" placeholder="e.g. Rishi#1234" required>
+
+                <button type="submit">Save and Continue</button>
+            </form>
+            <div id="login-status"></div>
+            <button id="logout-button" style="display:none;">Logout</button>
+        </section>
+    </main>
+    <footer>
+        <p><a href="/">Back to Store</a></p>
+        <p>&copy; 2026 Recording Hub. All rights reserved.</p>
+    </footer>
+    <script>
+        const urlParams = new URLSearchParams(window.location.search);
+        const nextPage = urlParams.get('next') || '/';
+        const nameInput = document.getElementById('name');
+        const discordInput = document.getElementById('discord');
+        const statusDiv = document.getElementById('login-status');
+        const logoutButton = document.getElementById('logout-button');
+
+        function updateStatus() {
+            const storedName = localStorage.getItem('recordingHubName');
+            const storedDiscord = localStorage.getItem('recordingHubDiscord');
+
+            if (storedName && storedDiscord) {
+                statusDiv.textContent = `Logged in as ${storedName} (${storedDiscord}).`;
+                logoutButton.style.display = 'inline-block';
+            } else {
+                statusDiv.textContent = 'No current login saved.';
+                logoutButton.style.display = 'none';
+            }
+        }
+
+        updateStatus();
+
+        document.getElementById('login-form').addEventListener('submit', (event) => {
+            event.preventDefault();
+            localStorage.setItem('recordingHubName', nameInput.value.trim());
+            localStorage.setItem('recordingHubDiscord', discordInput.value.trim());
+            window.location.href = nextPage;
+        });
+
+        logoutButton.addEventListener('click', () => {
+            localStorage.removeItem('recordingHubName');
+            localStorage.removeItem('recordingHubDiscord');
+            updateStatus();
+        });
+    </script>
+</body>
+</html>
