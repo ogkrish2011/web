@@ -31,3 +31,4 @@ A full-stack website for the Recording Hub Discord server, featuring UPI payment
 2. User pays via UPI using the QR code or ID.
 3. User enters transaction ID and submits.
 4. Discord notification is sent with payment details for manual verification.
+
