@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment - Recording Hub</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Payment Page</h1>
+        <p>Complete your purchase for Recording Hub services.</p>
+    </header>
+    <main>
+        <section id="product-details">
+            <h2>Product Details</h2>
+            <div id="details">
+                <p>Loading...</p>
+            </div>
+        </section>
+        <section id="payment-info">
+            <h2>Payment Information</h2>
+            <p>Send the exact amount to our UPI: <strong>8091056604@fam</strong></p>
+            <p>Scan the QR code below to pay:</p>
+            <img id="qr-code" src="images/qr.png" alt="UPI QR Code" style="max-width: 300px; border-radius: 8px;">
+            <p>After payment, enter your transaction ID below and submit to confirm.</p>
+            <form id="payment-form">
+                <label for="transaction-id">Transaction ID:</label>
+                <input type="text" id="transaction-id" name="transaction-id" required>
+                <button type="submit">Submit Payment</button>
+            </form>
+        </section>
+    </main>
+    <footer>
+        <p><a href="index.html">Back to Store</a></p>
+        <p>&copy; 2026 Recording Hub. All rights reserved.</p>
+    </footer>
+    <script>
+        // Get URL parameters
+        const urlParams = new URLSearchParams(window.location.search);
+        const plan = urlParams.get('plan');
+        const members = urlParams.get('members');
+        const price = urlParams.get('price');
+        const creators = urlParams.get('creators');
+
+        // Display product details
+        const detailsDiv = document.getElementById('details');
+        let detailsText = `<p><strong>Plan:</strong> ${plan}</p>`;
+        detailsText += `<p><strong>Members:</strong> ${members}</p>`;
+        if (creators) {
+            detailsText += `<p><strong>Content Creators:</strong> ${creators}</p>`;
+        }
+        detailsText += `<p><strong>Price:</strong> ₹${price}</p>`;
+        detailsDiv.innerHTML = detailsText;
+
+        // Set QR code based on product
+        const qrImg = document.getElementById('qr-code');
+        const qrSrc = `images/qr-${plan.toLowerCase()}-${members}.png`;
+        qrImg.src = qrSrc;
+        qrImg.alt = `QR Code for ${plan} ${members} members`;
+
+        // Handle form submission
+        document.getElementById('payment-form').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const transactionId = document.getElementById('transaction-id').value;
+
+            const response = await fetch('/submit-payment', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ plan, members, price, transactionId }),
+            });
+
+            const result = await response.json();
+            if (result.success) {
+                alert('Payment submitted successfully! We will verify and contact you soon.');
+            } else {
+                alert('Error submitting payment. Please try again.');
+            }
+        });
+    </script>
+</body>
+</html>
