@@ -8,8 +8,8 @@
 body {
     font-family: 'Arial', sans-serif;
     line-height: 1.6;
-    color: #e0e0e0;
-    background: linear-gradient(135deg, #0f1419 0%, #1e3a8a 50%, #0d7f7f 100%);
+    color: #d8d8d8;
+    background: linear-gradient(135deg, #060606 0%, #121212 45%, #2e2e2e 100%);
     background-attachment: fixed;
     margin: 0;
     padding: 0;
@@ -32,11 +32,11 @@ body {
 }
 
 header {
-    background: linear-gradient(135deg, #1e3a8a, #0d7f7f);
+    background: linear-gradient(135deg, #111111, #222222);
     padding: 1.5rem;
     position: relative;
     text-align: center;
-    border-bottom: 2px solid #00ffff;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.06);
     animation: slideDown 0.6s ease-out;
 }
 
@@ -48,11 +48,11 @@ header {
 
 .login-button {
     display: inline-block;
-    padding: 0.65rem 1rem;
-    background: #00ffff;
-    color: #0b1720;
+    padding: 0.75rem 1.2rem;
+    background: #2e2e2e;
+    color: #f4f4f4;
     border-radius: 999px;
-    border: 1px solid rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.1);
     text-decoration: none;
     font-weight: 700;
     transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
@@ -60,22 +60,21 @@ header {
 
 .login-button:hover {
     transform: translateY(-2px);
-    box-shadow: 0 8px 20px rgba(0, 255, 255, 0.3);
-    background: #8effff;
+    box-shadow: 0 8px 20px rgba(255, 255, 255, 0.08);
+    background: #4a4a4a;
 }
 
 header h1 {
-    color: #00ffff;
+    color: #f5f5f5;
     font-size: 2.2rem;
     margin-bottom: 0.5rem;
-    text-shadow: 0 0 8px #00ffff;
 }
 
 header p {
     font-size: 1rem;
     max-width: 800px;
     margin: 0 auto;
-    color: #b0e0e0;
+    color: #b0b0b0;
 }
 
 main {
@@ -84,26 +83,25 @@ main {
     padding: 0 1rem;
 }
 
-.login-card {
+..login-card {
     max-width: 520px;
     margin: 2rem auto;
     padding: 2rem;
     border-radius: 20px;
-    background: rgba(15, 20, 25, 0.95);
-    border: 1px solid rgba(0, 255, 255, 0.15);
-    box-shadow: 0 24px 60px rgba(0, 0, 0, 0.35);
+    background: linear-gradient(180deg, rgba(20,20,20,0.96), rgba(38,38,38,0.96));
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow: 0 24px 60px rgba(0, 0, 0, 0.45);
     animation: fadeInUp 0.8s ease-out;
 }
 
 .card-header h1 {
     margin-bottom: 0.5rem;
     font-size: 2rem;
-    color: #00ffff;
-    text-shadow: 0 0 8px rgba(0, 255, 255, 0.4);
+    color: #f4f4f4;
 }
 
 .card-header p {
-    color: #c8f5f5;
+    color: #c2c2c2;
     margin-bottom: 1.5rem;
     line-height: 1.5;
 }
@@ -112,27 +110,27 @@ main {
     margin-bottom: 1.2rem;
 }
 
-.login-card label {
+..login-card label {
     display: block;
     margin-bottom: 0.6rem;
-    color: #a5f7ff;
+    color: #c8c8c8;
     font-weight: 600;
 }
 
 .login-card input {
     width: 100%;
     padding: 0.95rem 1rem;
-    background: #111827;
-    border: 1px solid rgba(0, 255, 255, 0.25);
+    background: #1f1f1f;
+    border: 1px solid rgba(255, 255, 255, 0.08);
     border-radius: 12px;
-    color: #e5f8ff;
+    color: #e8e8e8;
     font-size: 1rem;
 }
 
 .login-card input:focus {
     outline: none;
-    border-color: #00ffff;
-    box-shadow: 0 0 0 4px rgba(0, 255, 255, 0.12);
+    border-color: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.05);
 }
 
 .primary-button,
@@ -147,15 +145,15 @@ main {
 }
 
 .primary-button {
-    background: #00ffff;
-    color: #0b1720;
+    background: #3f3f3f;
+    color: #f4f4f4;
     margin-top: 0.5rem;
 }
 
 .primary-button:hover {
-    background: #8effff;
+    background: #5a5a5a;
     transform: translateY(-2px);
-    box-shadow: 0 10px 20px rgba(0, 255, 255, 0.25);
+    box-shadow: 0 10px 20px rgba(255, 255, 255, 0.08);
 }
 
 .secondary-button {
@@ -184,16 +182,15 @@ section {
 }
 
 h2 {
-    color: #00ffff;
+    color: #f3f3f3;
     font-size: 1.8rem;
     margin-bottom: 1rem;
     text-align: center;
-    text-shadow: 0 0 4px #00ffff;
 }
 
-.plan {
-    background: linear-gradient(135deg, #1a1a2e, #16213e);
-    border: 1px solid #00ffff;
+..plan {
+    background: linear-gradient(135deg, #171717, #2b2b2b);
+    border: 1px solid rgba(255, 255, 255, 0.08);
     border-radius: 8px;
     padding: 1.2rem;
     margin-bottom: 1rem;
@@ -203,17 +200,17 @@ h2 {
 
 .plan:hover {
     transform: translateY(-3px);
-    box-shadow: 0 6px 12px rgba(0, 255, 255, 0.25);
+    box-shadow: 0 6px 12px rgba(255, 255, 255, 0.08);
 }
 
 .plan h3 {
-    color: #00ffff;
+    color: #f4f4f4;
     font-size: 1.4rem;
     margin-bottom: 0.4rem;
 }
 
 .plan p {
-    color: #b0e0e0;
+    color: #b5b5b5;
     margin-bottom: 0.8rem;
 }
 
@@ -223,32 +220,31 @@ h2 {
     gap: 1rem;
 }
 
-.product-card {
-    background: linear-gradient(135deg, #0d7f7f, #1e3a8a);
-    color: #ffffff;
+..product-card {
+    background: linear-gradient(135deg, #1f1f1f, #2e2e2e);
+    color: #ebebeb;
     padding: 0.9rem;
     border-radius: 8px;
-    border: 1px solid #00ffff;
+    border: 1px solid rgba(255, 255, 255, 0.08);
     flex: 1 1 calc(50% - 1rem);
     min-width: 200px;
     text-align: center;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.18);
     text-decoration: none;
     display: block;
 }
 
 .product-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 4px 8px rgba(0, 255, 255, 0.4);
-    animation: pulse 0.6s ease-in-out;
+    box-shadow: 0 4px 10px rgba(255, 255, 255, 0.08);
 }
 
 footer {
-    background: linear-gradient(135deg, #1e3a8a, #0d7f7f);
+    background: linear-gradient(135deg, #101010, #222222);
     text-align: center;
     padding: 1rem;
-    border-top: 2px solid #00ffff;
+    border-top: 2px solid rgba(255, 255, 255, 0.08);
     margin-top: 2rem;
     animation: fadeInUp 1s ease-out;
 }
@@ -257,20 +253,20 @@ footer {
     max-width: 1200px;
     margin: 2rem auto;
     padding: 1rem;
-    background: linear-gradient(135deg, #1a1a2e, #16213e);
+    background: linear-gradient(135deg, #151515, #252525);
     border-radius: 8px;
-    border: 1px solid #00ffff;
+    border: 1px solid rgba(255, 255, 255, 0.08);
     text-align: center;
     animation: fadeInUp 1s ease-out;
 }
 
 #payment h2 {
-    color: #00ffff;
+    color: #ededed;
     margin-bottom: 1rem;
 }
 
 #payment p {
-    color: #b0e0e0;
+    color: #c3c3c3;
     margin-bottom: 1rem;
 }
 
@@ -280,15 +276,14 @@ footer {
 
 footer p {
     margin-bottom: 0.5rem;
-    color: #b0e0e0;
+    color: #b0b0b0;
     animation: fadeIn 1s ease-out;
 }
 
 footer a {
-    color: #00ffff;
+    color: #d4d4d4;
     text-decoration: none;
     transition: color 0.3s ease;
-    animation: glow 2s ease-in-out infinite;
 }
 
 footer a:hover {
@@ -308,28 +303,31 @@ footer a:hover {
 }
 
 #payment input {
-    padding: 0.5rem;
-    border: 1px solid #00ffff;
-    border-radius: 4px;
-    background: #1a1a2e;
-    color: #ffffff;
-    margin-bottom: 1rem;
+    width: 100%;
+    max-width: 420px;
+    margin: 0 auto 1rem;
+    display: block;
+    padding: 0.8rem;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 6px;
+    background: #1f1f1f;
+    color: #ececec;
     animation: fadeIn 3s ease-out;
 }
 
 #payment button {
-    padding: 0.5rem 1rem;
-    background: #00ffff;
-    color: #121212;
+    padding: 0.7rem 1.4rem;
+    background: #3a3a3a;
+    color: #f2f2f2;
     border: none;
-    border-radius: 4px;
+    border-radius: 6px;
     cursor: pointer;
-    transition: background 0.3s ease;
-    animation: pulse 2s ease-in-out infinite;
+    transition: background 0.3s ease, transform 0.2s ease;
 }
 
 #payment button:hover {
-    background: #0d7f7f;
+    background: #5a5a5a;
+    transform: translateY(-1px);
 }
 
 /* Responsive design */
