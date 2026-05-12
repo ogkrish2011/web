@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Aegis Guard — Discord Moderation Bot</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="hero">
+      <div class="container hero-content">
+        <div>
+          <p class="eyebrow">Premium Discord Moderation</p>
+          <h1>Aegis Guard</h1>
+          <p class="subtitle">Aegis Guard protects your community with smart controls and a polished admin dashboard.</p>
+          <div class="hero-actions">
+            <a class="button primary" href="#dashboard">Open Dashboard</a>
+            <a class="button secondary" href="#features">See Features</a>
+          </div>
+        </div>
+        <div class="hero-image">
+          <div class="card">
+            <h2>Govern Your Server</h2>
+            <p>Security, moderation, automation, and utility commands in a unified professional package.</p>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main class="container">
+      <section id="dashboard" class="section">
+        <div class="dashboard-card">
+          <div class="dashboard-header">
+            <div>
+              <h2>Live Feature Dashboard</h2>
+              <p>Toggle bot categories and automation settings straight from the website.</p>
+            </div>
+            <span id="dashboard-status" class="status-pill">Loading…</span>
+          </div>
+
+          <form id="feature-form">
+            <div class="grid dashboard-grid">
+              <div class="toggle-card">
+                <h3>Security</h3>
+                <p>Anti-nuke, mass action rollback, raid protection, and emergency lockdown.</p>
+                <label class="toggle">
+                  <input class="feature-toggle" type="checkbox" name="security" />
+                  <span>Enabled</span>
+                </label>
+              </div>
+              <div class="toggle-card">
+                <h3>Moderation</h3>
+                <p>Ban, kick, mute, warn, purge, lock, slowmode, and logging.</p>
+                <label class="toggle">
+                  <input class="feature-toggle" type="checkbox" name="moderation" />
+                  <span>Enabled</span>
+                </label>
+              </div>
+              <div class="toggle-card">
+                <h3>Automation</h3>
+                <p>Auto role assignment, welcome/farewell flow, ticket workflow, and filters.</p>
+                <label class="toggle">
+                  <input class="feature-toggle" type="checkbox" name="automation" />
+                  <span>Enabled</span>
+                </label>
+              </div>
+              <div class="toggle-card">
+                <h3>Utility</h3>
+                <p>Server info, user info, channel tools, and role utilities.</p>
+                <label class="toggle">
+                  <input class="feature-toggle" type="checkbox" name="utility" />
+                  <span>Enabled</span>
+                </label>
+              </div>
+              <div class="toggle-card">
+                <h3>Customization</h3>
+                <p>Prefix, permissions, logging, and server-specific settings.</p>
+                <label class="toggle">
+                  <input class="feature-toggle" type="checkbox" name="customization" />
+                  <span>Enabled</span>
+                </label>
+              </div>
+              <div class="toggle-card">
+                <h3>Fun</h3>
+                <p>Giveaways, mini-games, memes, and engagement commands.</p>
+                <label class="toggle">
+                  <input class="feature-toggle" type="checkbox" name="fun" />
+                  <span>Enabled</span>
+                </label>
+              </div>
+            </div>
+
+            <div class="input-grid">
+              <label class="input-group">
+                <span>Welcome Channel ID</span>
+                <input id="welcomeChannelId" name="welcomeChannelId" type="text" placeholder="Channel ID" />
+              </label>
+              <label class="input-group">
+                <span>Farewell Channel ID</span>
+                <input id="farewellChannelId" name="farewellChannelId" type="text" placeholder="Channel ID" />
+              </label>
+              <label class="input-group">
+                <span>Auto Role ID</span>
+                <input id="autoRoleId" name="autoRoleId" type="text" placeholder="Role ID" />
+              </label>
+              <label class="input-group">
+                <span>Log Channel ID</span>
+                <input id="logChannelId" name="logChannelId" type="text" placeholder="Channel ID" />
+              </label>
+              <label class="input-group">
+                <span>Mod Role ID</span>
+                <input id="modRoleId" name="modRoleId" type="text" placeholder="Role ID" />
+              </label>
+              <label class="input-group">
+                <span>Auto Role Message</span>
+                <input id="autoRoleMessage" name="autoRoleMessage" type="text" placeholder="Welcome text for auto roles" />
+              </label>
+            </div>
+
+            <div class="card actions-card">
+              <button class="button primary" type="submit">Save Settings</button>
+            </div>
+          </form>
+        </div>
+      </section>
+
+      <section id="features" class="section">
+        <h2>Featured Command Categories</h2>
+        <div class="grid cards">
+          <article>
+            <h3>Security & Anti-Nuke</h3>
+            <p>Protect against raids, revoke dangerous permissions, and rollback mass actions.</p>
+          </article>
+          <article>
+            <h3>Moderation</h3>
+            <p>Ban, kick, mute, warn, purge, lock channels, and enable case logging.</p>
+          </article>
+          <article>
+            <h3>Automation</h3>
+            <p>Auto roles, welcome messages, filters, and ticket handling for teams.</p>
+          </article>
+          <article>
+            <h3>Utility</h3>
+            <p>Server info, user lookups, role tools, and channel management commands.</p>
+          </article>
+          <article>
+            <h3>Customization</h3>
+            <p>Custom settings per server, command permissions, and logging configuration.</p>
+          </article>
+          <article>
+            <h3>Fun & Engagement</h3>
+            <p>Giveaways, memes, games, and interactive community commands.</p>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <p>Aegis Guard — professional Discord moderation with dashboard control.</p>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>

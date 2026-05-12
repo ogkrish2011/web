@@ -1,35 +1,26 @@
-# Recording Hub Website
+# Aegis Guard
 
-A full-stack website for the Recording Hub Discord server, featuring UPI payment submission with Discord notifications.
+A professional Discord moderation bot with 100+ commands and a live dashboard for feature toggling.
 
 ## Features
-
-- Pricing plans for Minecraft YouTubers
-- UPI payment integration (manual submission)
-- Discord notifications on payment submission
-- Login page captures buyer name and Discord username
-- Responsive design with aqua theme
+- Slash commands for moderation
+- Ban, kick, mute, warn, clear messages
+- Warning system with history
+- Static website served with Express
 
 ## Setup
+1. Copy `.env.example` to `.env`
+2. Set `DISCORD_TOKEN`, `CLIENT_ID`, `GUILD_ID`, and `PORT`
+3. Run `npm install`
+4. Start the website: `npm run web`
+5. Start the bot: `npm run bot`
+6. Open `http://localhost:3000`
 
-1. Install dependencies: `npm install`
-2. Set up environment variables in `.env`:
-   - `DISCORD_WEBHOOK_URL`: Your Discord webhook URL for notifications
-   - `PORT`: Server port (default 3000)
-3. Upload QR codes for each product in the `images/` folder, named as `qr-{plan}-{members}.png` (e.g., `qr-bronze-5.png`)
-4. Run the server: `npm start` or `npm run dev` for development
-5. Open `http://localhost:3000` in your browser
+## Dashboard
+The website now includes a live dashboard for toggling feature categories and automation settings. Changes are stored in `src/data/config.json` and apply immediately for command execution.
 
-## Customization
+## Deploy
+Use `npm run dev` to start both web and bot locally.
 
-- Edit `index.html` to update content, plans, or links.
-- Modify `style.css` to change colors, fonts, or layout.
-- Update `server.js` for backend logic.
-
-## Payment Flow
-
-1. User selects a product and goes to payment page.
-2. User pays via UPI using the QR code or ID.
-3. User enters transaction ID and submits.
-4. Discord notification is sent with payment details for manual verification.
-
+## Website
+The site is served from `website/index.html` and styled with `website/styles.css`.

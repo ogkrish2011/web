@@ -1,0 +1,18 @@
+{
+  "features": {
+    "security": true,
+    "moderation": true,
+    "automation": true,
+    "utility": true,
+    "customization": true,
+    "fun": true
+  },
+  "welcomeChannelId": null,
+  "farewellChannelId": null,
+  "autoRoleId": null,
+  "logChannelId": null,
+  "modRoleId": null,
+  "autoRoleMessage": null,
+  "serverPrefix": "!",
+  "lastUpdated": null
+}
