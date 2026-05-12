@@ -9,12 +9,11 @@ A professional Discord moderation bot with 100+ commands and a live dashboard fo
 - Static website served with Express
 
 ## Setup
-1. Copy `.env.example` to `.env`
-2. Set `DISCORD_TOKEN`, `CLIENT_ID`, `GUILD_ID`, and `PORT`
-3. Run `npm install`
-4. Start the website: `npm run web`
-5. Start the bot: `npm run bot`
-6. Open `http://localhost:3000`
+1. Set `DISCORD_TOKEN`, `CLIENT_ID`, `GUILD_ID`, and `PORT`
+2. Run `npm install`
+3. Start the website: `npm run web`
+4. Start the bot: `npm run bot`
+5. Open `http://localhost:3000`
 
 ## Dashboard
 The website now includes a live dashboard for toggling feature categories and automation settings. Changes are stored in `src/data/config.json` and apply immediately for command execution.
